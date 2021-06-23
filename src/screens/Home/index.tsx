@@ -30,6 +30,18 @@ export function Home(){
             category: '1',
             date: '22/06 as 20:40h',
             description: 'É hoje que vamos chegar ao challenger sem perder uma partida da md10'
+        } , 
+        {
+            id: '2',
+            guild: {
+                id: '1',
+                name: 'Lendarios',
+                icon: null,
+                owner: true
+            },
+            category: '1',
+            date: '22/06 as 20:40h',
+            description: 'É hoje que vamos chegar ao challenger sem perder uma partida da md10'
         }
     ]
 
@@ -44,13 +56,11 @@ export function Home(){
                 <ButtonAdd />
             </View>
 
-            <View>
             <CategorySelect
                 categorySelected={category}
                 setCategory={handleCategorySelected}
             />
-            </View>
-
+            
             <View style={styles.content}>
                 <ListHeader
                     title="Partidas agendadas"
@@ -62,6 +72,7 @@ export function Home(){
                     keyExtractor={item => item.id}
                     renderItem={({ item }) => (
                         <Appointment data={item} />
+                        
                     )}
                     ItemSeparatorComponent={() => <ListDivider />}
                     style={styles.matches}
